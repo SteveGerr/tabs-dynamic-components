@@ -1,7 +1,5 @@
 <template>
-  <div class="component-one">
-    Component 1
-  </div>
+  <div class="component-one"></div>
 </template>
 
 <script>
@@ -11,8 +9,5 @@ export default {
 </script>
 
 <style>
-    /* .component-one {
-        background-color:brown;
-    } */
 
 </style>

@@ -1,12 +1,12 @@
 <template>
     <div class="container">
         <div class="container__tabs">
-            <b-button-group>
-                <b-button @click="CurentComponent = 'ComponentOne'" variant="success">Tab 1</b-button>
-                <b-button @click="CurentComponent = 'ComponentTwo'" variant="info">Tab 2</b-button>
-            </b-button-group>
+            <button @click="CurentComponent = 'ComponentOne'">Tab 1</button>
+            <button @click="CurentComponent = 'ComponentTwo'">Tab 2</button>
         </div>
-        <component :is="CurentComponent"></component>
+        <Transition name="fade" mode="out-in">
+            <component :is="CurentComponent"></component>
+        </Transition>
     </div>
 </template>
 
@@ -29,12 +29,40 @@ export default {
 </script>
 
 <style>
+    * {
+        box-sizing: border-box;
+    }
     .container {
         max-width: 500px;
-        margin: auto;
+        min-height: 500px;
+        margin: 0 auto;
     }
     .container__tabs {
         margin-bottom: 10px;
+    }
+
+    .component-one {
+        background: url('https://autoiwc.ru/images/bmw/bmw-3.webp');
+    }
+    .component-two {
+        background: url('https://www.mod-files.com/uploads/tuningfiles/0fe044a7f236bcf6683e1577566ac0__tuningtype_.jpg');
+    }
+    .component-one,
+    .component-two {
+        min-height: 281px;
+        border-radius: 5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 0.5s ease;
+    }
+
+    .fade-enter-from,
+    .fade-leave-to {
+        opacity: 0;
     }
 
 </style>

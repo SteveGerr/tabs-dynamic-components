@@ -1,7 +1,5 @@
 <template>
-  <div class="component-two">
-    Component 2
-  </div>
+  <div class="component-two"></div>
 </template>
 
 <script>
@@ -11,8 +9,5 @@
 </script>
 
 <style>
-    .component-two {
-      background-color:rgb(52, 150, 49);
-    }
 
 </style>
